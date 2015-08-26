@@ -1,0 +1,44 @@
+﻿namespace Examples
+
+enum Type
+{
+    Unknown,
+    Circle,
+    Rectange
+}
+
+struct ShapeProps
+{
+}
+
+struct Shape
+{
+    0: Type Type = Unknown;
+    1: bonded<ShapeProps> Props;
+}
+
+struct Circle : Shape
+{
+    0: double Radius;
+}
+
+struct CircleProps : ShapeProps
+{
+    0: string CircleString;
+}
+
+struct Rectangle : Shape
+{
+    0: double Width;
+    1: double Height;
+}
+
+struct RectangleProps : ShapeProps
+{
+    0: string RectangleString;
+}
+
+struct Polymorphic
+{
+    0: vector<bonded<Shape>> Shapes;
+} 
